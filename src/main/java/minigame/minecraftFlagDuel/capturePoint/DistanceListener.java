@@ -4,6 +4,7 @@ DistanceListener: Check whether player is in a target point. if so, accumulate t
 
 package minigame.minecraftFlagDuel.capturePoint;
 
+import minigame.minecraftFlagDuel.capturePoint.entities.Target;
 import minigame.minecraftFlagDuel.constants.Constants;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -13,7 +14,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-import static minigame.minecraftFlagDuel.constants.Constants.targetPoints;
+import static minigame.minecraftFlagDuel.capturePoint.entities.Target.targetPoints;
 
 public class DistanceListener implements Listener {
     @EventHandler
@@ -25,7 +26,7 @@ public class DistanceListener implements Listener {
         String closest = null;
 
         for (String targetName : targetPoints.keySet()) {
-            Constants.Target targetLocation = targetPoints.get(targetName);
+            Target targetLocation = targetPoints.get(targetName);
             double distance = playerLocation.distance(targetLocation.location);
             if (distance < minDistance) {
                 minDistance = distance;

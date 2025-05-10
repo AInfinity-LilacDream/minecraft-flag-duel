@@ -1,5 +1,6 @@
 package minigame.minecraftFlagDuel.capturePoint;
 
+import minigame.minecraftFlagDuel.capturePoint.entities.Target;
 import minigame.minecraftFlagDuel.constants.Constants;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -9,7 +10,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Objects;
 
-import static minigame.minecraftFlagDuel.constants.Constants.targetPoints;
+import static minigame.minecraftFlagDuel.capturePoint.entities.Target.targetPoints;
 
 public class TargetParticleEffect {
     private final int intervalTicks;
@@ -22,14 +23,14 @@ public class TargetParticleEffect {
         new BukkitRunnable() {
             @Override
             public void run() {
-                for (Constants.Target center : targetPoints.values()) {
-                    drawCircle(center, 6.0, 50); // 半径3格，用20个粒子点组成圆圈
+                for (Target center : targetPoints.values()) {
+                    drawCircle(center, 6.0, 150);
                 }
             }
         }.runTaskTimer(Objects.requireNonNull(Bukkit.getPluginManager().getPlugin(Constants.pluginName)), 0L, intervalTicks);
     }
 
-    private void drawCircle(Constants.Target center, double radius, int particles) {
+    private void drawCircle(Target center, double radius, int particles) {
         Location loc = center.location;
 
         World world = loc.getWorld();
