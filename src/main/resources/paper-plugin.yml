@@ -1,0 +1,4 @@
+name: minecraftFlagDuel
+version: '1.0-SNAPSHOT'
+main: minigame.minecraftFlagDuel.MinecraftFlagDuel
+api-version: '1.21'
