@@ -19,7 +19,7 @@ import static minigame.minecraftFlagDuel.capturePoint.entities.Target.targetPoin
 
 // 对于每个占领点监听点内的队伍
 public class TargetTeamListener {
-    public static void checkAndNotifyTeam(int radius) {
+    public static void checkAndNotifyTeam(double radius) {
         for (String targetName : targetPoints.keySet()) {
             Target target = targetPoints.get(targetName);
 

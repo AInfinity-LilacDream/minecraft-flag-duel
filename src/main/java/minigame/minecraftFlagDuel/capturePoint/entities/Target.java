@@ -78,14 +78,14 @@ public class Target {
             Particle.SMOKE,
             new Particle.DustOptions(Color.AQUA, 1.0F),
             new ItemStack(Material.CYAN_GLAZED_TERRACOTTA, 1),
-            "Protection duel resource"
+            "Protection resource"
     );
     private static final Target targetProtection2 = new Target(
             new Location(org.bukkit.Bukkit.getWorld(Constants.worldName), 91.5, 157, -131.5),
             Particle.SMOKE,
             new Particle.DustOptions(Color.AQUA, 1.0F),
             new ItemStack(Material.CYAN_GLAZED_TERRACOTTA, 1),
-            "Protection duel resource"
+            "Protection resource"
     );
 
     public static final Map<String, Target> targetPoints = new HashMap<String, Target>() {{

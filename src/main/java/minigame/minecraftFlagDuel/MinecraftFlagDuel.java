@@ -7,6 +7,7 @@ import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import minigame.minecraftFlagDuel.capturePoint.DistanceListener;
 import minigame.minecraftFlagDuel.capturePoint.TargetParticleEffect;
 import minigame.minecraftFlagDuel.capturePoint.TargetTeamListener;
+import minigame.minecraftFlagDuel.capturePoint.VillagerShopManager;
 import minigame.minecraftFlagDuel.commands.ShuffleTeam;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -27,8 +28,10 @@ public final class MinecraftFlagDuel extends JavaPlugin {
         });
 
         this.getServer().getScheduler().runTaskTimer(this, () -> {
-            TargetTeamListener.checkAndNotifyTeam(6);
+            TargetTeamListener.checkAndNotifyTeam(5.5);
         }, 0L, 1L); // 初始延迟0刻后开始，之后每隔20刻(即1秒)重复一次
+
+        new VillagerShopManager(this);
     }
 
     @Override

@@ -30,7 +30,7 @@ public class ShuffleTeam {
         int teamCount = Math.min(onlinePlayers.size(), teams.size());
         for (int i = 0; i < onlinePlayers.size(); ++i) {
             Player player = onlinePlayers.get(i);
-            Team team = teams.get(i % teamCount + 1);
+            Team team = teams.get(i % teamCount);
             team.addEntry(player.getName());
         }
 

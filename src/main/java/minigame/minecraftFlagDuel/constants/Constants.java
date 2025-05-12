@@ -1,6 +1,12 @@
 package minigame.minecraftFlagDuel.constants;
 
 import net.kyori.adventure.text.format.NamedTextColor;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.inventory.ItemStack;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Constants {
     public static final String worldName = "world";
@@ -18,8 +24,25 @@ public class Constants {
         }
     }
 
+    public static Location[] duelShopVillagerLocation = new Location[]{
+            new Location(Bukkit.getWorld(Constants.worldName), 141, 157, -95),
+            new Location(Bukkit.getWorld(Constants.worldName), 141, 157, -112),
+            new Location(Bukkit.getWorld(Constants.worldName), 141, 157, -129),
+            new Location(Bukkit.getWorld(Constants.worldName), 43, 157, -134),
+            new Location(Bukkit.getWorld(Constants.worldName), 141, 157, -117),
+            new Location(Bukkit.getWorld(Constants.worldName), 141, 157, -100),
+    };
+
+    public static Location[] buffShopVillagerLocation = new Location[]{
+            new Location(Bukkit.getWorld(Constants.worldName), 146, 157, -95),
+            new Location(Bukkit.getWorld(Constants.worldName), 146, 157, -112),
+            new Location(Bukkit.getWorld(Constants.worldName), 146, 157, -129),
+            new Location(Bukkit.getWorld(Constants.worldName), 38, 157, -134),
+            new Location(Bukkit.getWorld(Constants.worldName), 38, 157, -117),
+            new Location(Bukkit.getWorld(Constants.worldName), 38, 157, -100),
+    };
+
     public static final TeamWithDetails[] teams = {
-            new TeamWithDetails("dummy", NamedTextColor.WHITE),
             new TeamWithDetails("红", NamedTextColor.RED),
             new TeamWithDetails("橙", NamedTextColor.GOLD),
             new TeamWithDetails("黄", NamedTextColor.YELLOW),
