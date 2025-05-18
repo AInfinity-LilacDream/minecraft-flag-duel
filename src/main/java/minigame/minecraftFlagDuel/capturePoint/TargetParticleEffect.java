@@ -24,7 +24,7 @@ public class TargetParticleEffect {
             @Override
             public void run() {
                 for (Target center : targetPoints.values()) {
-                    drawCircle(center, 6.0, 150);
+                    drawCircle(center, 6.0, 100);
                 }
             }
         }.runTaskTimer(Objects.requireNonNull(Bukkit.getPluginManager().getPlugin(Constants.pluginName)), 0L, intervalTicks);

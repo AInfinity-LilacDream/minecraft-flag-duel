@@ -1,5 +1,6 @@
 package minigame.minecraftFlagDuel.capturePoint.entities;
 
+import minigame.minecraftFlagDuel.constants.Constants;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
@@ -15,10 +16,16 @@ public class ShopItem {
     private final ItemMeta meta;
     private final ItemStack costItem;
     private final int amount;
+    private int mode = -1;
 
     public ShopItem(Material material, String name, Material costItem, String costItemName) {
         this.amount = 1;
         this.costItem = new ItemStack(costItem, 1);
+
+        if (material == Material.STICK) this.mode = Constants.KNOCKBACK_ID;
+        else if (material == Material.ZOMBIE_HEAD) this.mode = Constants.PVE_ID;
+        else if (material == Material.NETHERITE_BOOTS) this.mode = Constants.RANDOM_ID;
+        else if (material == Material.NETHERITE_SWORD) this.mode = Constants.SWORD_ID;
 
         this.item = new ItemStack(material, 1);
         this.meta = this.item.getItemMeta();
@@ -83,5 +90,9 @@ public class ShopItem {
 
     public int getCostItemAmount() {
         return amount;
+    }
+
+    public int getMode() {
+        return mode;
     }
 }

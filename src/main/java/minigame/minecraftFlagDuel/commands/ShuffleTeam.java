@@ -21,7 +21,7 @@ public class ShuffleTeam {
 
         clearExistingTeams();
 
-        for (int i = 1; i <= 10; ++i) {
+        for (int i = 0; i < 10; ++i) {
             Team team = teamBoard.registerNewTeam(Constants.teams[i].teamName);
             team.color(Constants.teams[i].teamColor);
         }
@@ -32,6 +32,8 @@ public class ShuffleTeam {
             Player player = onlinePlayers.get(i);
             Team team = teams.get(i % teamCount);
             team.addEntry(player.getName());
+
+            player.sendMessage(team.getName());
         }
 
         return Command.SINGLE_SUCCESS;
